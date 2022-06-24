@@ -7,8 +7,8 @@ export const schema = gql`
   }
 
   type Query {
-    movies: [Movie!]! @requireAuth
-    movie(id: Int!): Movie @requireAuth
+    movies: [Movie!]! @skipAuth
+    movie(id: Int!): Movie @skipAuth
   }
 
   input CreateMovieInput {
