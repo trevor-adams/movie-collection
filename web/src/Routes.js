@@ -11,17 +11,21 @@ import { Set, Router, Route } from '@redwoodjs/router'
 
 import MoviesLayout from 'src/layouts/MoviesLayout'
 
+import LandingLayout from './layouts/LandingLayout/LandingLayout'
+
 const Routes = () => {
   return (
     <Router>
       <Set wrap={MoviesLayout}>
-        <Route path="/movies/new" page={MovieNewMoviePage} name="newMovie" />
-        <Route path="/movies/{id:Int}/edit" page={MovieEditMoviePage} name="editMovie" />
-        <Route path="/movies/{id:Int}" page={MovieMoviePage} name="movie" />
-        <Route path="/movies" page={MovieMoviesPage} name="movies" />
+        <Route path="/admin/movies/new" page={MovieNewMoviePage} name="newMovie" />
+        <Route path="/admin/movies/{id:Int}/edit" page={MovieEditMoviePage} name="editMovie" />
+        <Route path="/admin/movies/{id:Int}" page={MovieMoviePage} name="movie" />
+        <Route path="/admin/movies" page={MovieMoviesPage} name="movies" />
       </Set>
-      <Route path="/about" page={AboutPage} name="about" />
-      <Route path="/" page={HomePage} name="home" />
+      <Set wrap={LandingLayout}>
+        <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/" page={HomePage} name="home" />
+      </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
   )

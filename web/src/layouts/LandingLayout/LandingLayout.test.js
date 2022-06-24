@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import MovieLayout from './MovieLayout'
+import LandingLayout from './LandingLayout'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //   https://redwoodjs.com/docs/testing#testing-pages-layouts
 
-describe('MovieLayout', () => {
+describe('LandingLayout', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<MovieLayout />)
+      render(<LandingLayout />)
     }).not.toThrow()
   })
 })
