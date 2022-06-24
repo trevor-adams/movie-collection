@@ -1,3 +1,4 @@
+import MovieArticle from '../MovieArticle/MovieArticle'
 export const QUERY = gql`
   query MovieArticlesQuery {
     movies {
@@ -20,8 +21,12 @@ export const Failure = ({ error }) => (
 export const Success = ({ movies }) => {
   return (
     <ul>
-      {movies.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
+      {movies.map((movie) => {
+        return (
+          <li key={movie.id}>
+            <MovieArticle movie={movie} />
+          </li>
+        )
       })}
     </ul>
   )
